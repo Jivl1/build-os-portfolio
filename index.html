@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Build OS is a polished developer portfolio for projects, GitHub work, skills, and contact."
+    />
+    <title>Build OS - Portfolio by Jivl1</title>
+    <link rel="preload" href="./assets/hero-structure.png" as="image" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" data-topbar>
+        <a class="brand" href="#home" aria-label="Build OS home">Build OS</a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#featured">Featured</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="ghost-pill" href="https://github.com/Jivl1" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="dark-pill" href="#contact" aria-label="Open contact section">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+            Start
+          </a>
+        </div>
+      </header>
+
+      <main id="home">
+        <section class="hero section-panel" aria-labelledby="hero-title">
+          <img class="hero-bg" src="./assets/hero-structure.png" alt="" />
+          <div class="hero-copy">
+            <p class="eyebrow">Developer portfolio - live projects</p>
+            <h1 id="hero-title">
+              <span>SHIP</span>
+              <span class="muted">YOUR</span>
+              <span>IDEAS</span>
+            </h1>
+          </div>
+          <a class="scroll-cue" href="#featured">
+            <span>Scroll</span>
+            <i aria-hidden="true"></i>
+          </a>
+        </section>
+
+        <section id="featured" class="featured-wrap" aria-labelledby="featured-title">
+          <article class="feature-card hero-product">
+            <div class="ribbon">Featured build</div>
+            <div class="project-visual visual-diasspora" aria-hidden="true">
+              <div class="browser-line">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="store-preview">
+                <div class="stacked-item wide"></div>
+                <div class="stacked-item"></div>
+                <div class="stacked-item"></div>
+                <div class="stacked-item active"></div>
+              </div>
+              <button class="play-orbit" aria-label="Preview project">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 7 8 5-8 5V7z" />
+                </svg>
+              </button>
+            </div>
+            <div class="feature-content">
+              <div class="meta-row">
+                <span>Live storefront</span>
+                <span>HTML/CSS</span>
+              </div>
+              <h2 id="featured-title">Diasspora Store</h2>
+              <p>
+                Optimized landing page for a second-hand store, built with a compact visual system,
+                fast loading, and clear product storytelling.
+              </p>
+              <ul class="dash-list">
+                <li>responsive landing architecture</li>
+                <li>conversion-focused hero and product flow</li>
+                <li>deployed on Vercel</li>
+                <li>clean static front end</li>
+              </ul>
+              <div class="tag-row">
+                <span>Retail</span>
+                <span>Landing</span>
+                <span>Vercel</span>
+              </div>
+              <div class="price-row">
+                <strong>2026</strong>
+                <a class="dark-pill" href="https://diasspora-store.vercel.app" target="_blank" rel="noreferrer">Open live</a>
+                <a class="ghost-pill" href="https://github.com/Jivl1/diasspora-store" target="_blank" rel="noreferrer">Source</a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="projects" class="recent-drops" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <p class="eyebrow">Recent repos</p>
+            <h2 id="projects-title">Project Drops</h2>
+          </div>
+          <div class="project-grid">
+            <article class="mini-card" data-kind="css">
+              <div class="mini-visual visual-portfolio"></div>
+              <div class="mini-body">
+                <span class="mini-kicker">CSS system</span>
+                <h3>mczorro-site</h3>
+                <p>Focused site work with custom styling, layout polish, and a compact front-end structure.</p>
+                <div class="mini-footer">
+                  <a href="https://github.com/Jivl1/mczorro-site" target="_blank" rel="noreferrer">Learn more</a>
+                  <span>CSS</span>
+                </div>
+              </div>
+            </article>
+            <article class="mini-card" data-kind="js">
+              <div class="mini-visual visual-shop"></div>
+              <div class="mini-body">
+                <span class="mini-kicker">JavaScript</span>
+                <h3>SDT104 HW13</h3>
+                <p>Product data, detail pages, and client-side interactions for a course commerce project.</p>
+                <div class="mini-footer">
+                  <a href="https://github.com/Jivl1/SDT104-project_HW13" target="_blank" rel="noreferrer">Learn more</a>
+                  <span>JS</span>
+                </div>
+              </div>
+            </article>
+            <article class="mini-card" data-kind="html">
+              <div class="mini-visual visual-html"></div>
+              <div class="mini-body">
+                <span class="mini-kicker">HTML build</span>
+                <h3>SDT104 HW12</h3>
+                <p>Structured markup practice with responsive sections and careful page composition.</p>
+                <div class="mini-footer">
+                  <a href="https://github.com/Jivl1/SDT104-project_HW12" target="_blank" rel="noreferrer">Learn more</a>
+                  <span>HTML</span>
+                </div>
+              </div>
+            </article>
+            <article class="mini-card" data-kind="presentation">
+              <div class="mini-visual visual-deck"></div>
+              <div class="mini-body">
+                <span class="mini-kicker">Final work</span>
+                <h3>Final Project</h3>
+                <p>Presentation-ready coursework organized for clarity, delivery, and project review.</p>
+                <div class="mini-footer">
+                  <a href="https://github.com/Jivl1/SDT104-project_Final-Project-Presentation-" target="_blank" rel="noreferrer">Learn more</a>
+                  <span>CSS</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="skills" class="about-band" aria-labelledby="skills-title">
+          <div class="idea-copy">
+            <p class="eyebrow line">The idea</p>
+            <h2 id="skills-title">Made for <em>shipping.</em></h2>
+            <p>
+              A portfolio that treats every project like a compact product: clear proof, clean links,
+              useful context, and enough visual energy to feel memorable.
+            </p>
+            <div class="stats-row" aria-label="Portfolio stats">
+              <div>
+                <strong>12+</strong>
+                <span>public repos</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>live Vercel app</span>
+              </div>
+              <div>
+                <strong>*</strong>
+                <span>ready to customize</span>
+              </div>
+            </div>
+          </div>
+          <div class="skills-board" aria-label="Skill categories">
+            <div class="skill-panel">
+              <span>01</span>
+              <h3>Front-end</h3>
+              <p>HTML, CSS, JavaScript, responsive layouts, UI polish.</p>
+            </div>
+            <div class="skill-panel">
+              <span>02</span>
+              <h3>Product</h3>
+              <p>Landing pages, ecommerce flows, structure, messaging.</p>
+            </div>
+            <div class="skill-panel">
+              <span>03</span>
+              <h3>Delivery</h3>
+              <p>GitHub repos, Vercel deployment, small clean releases.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">FAQ</h2>
+          <div class="faq-list">
+            <details open>
+              <summary>Can this become a personal portfolio?</summary>
+              <p>Yes. Replace the placeholder copy with your real bio, strongest projects, and contact links.</p>
+            </details>
+            <details>
+              <summary>Is it connected to GitHub?</summary>
+              <p>The project cards link to real repositories on the Jivl1 GitHub profile.</p>
+            </details>
+            <details>
+              <summary>Is it ready for Vercel?</summary>
+              <p>Yes. It is a static site with a Vercel config, so it can deploy without a build step.</p>
+            </details>
+          </div>
+        </section>
+
+        <section id="contact" class="contact-strip" aria-labelledby="contact-title">
+          <div>
+            <p class="eyebrow">Available now</p>
+            <h2 id="contact-title">Ready to turn this into your final portfolio.</h2>
+          </div>
+          <div class="contact-actions">
+            <a class="dark-pill" href="https://github.com/Jivl1" target="_blank" rel="noreferrer">GitHub profile</a>
+            <button class="ghost-pill" type="button" data-copy="https://github.com/Jivl1">Copy link</button>
+          </div>
+        </section>
+      </main>
+
+      <aside class="availability-toast" data-toast>
+        <button type="button" aria-label="Close availability card" data-close-toast>x</button>
+        <span class="percent">%</span>
+        <div>
+          <small>Portfolio ready</small>
+          <strong>DEPLOYABLE</strong>
+        </div>
+      </aside>
+
+      <nav class="mobile-dock" aria-label="Mobile navigation">
+        <a href="#home" class="active">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20H6v-7h12" /></svg>
+          <span>Home</span>
+        </a>
+        <a href="#featured">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.9-5.4 2.9 1-6-4.3-4.2 6-.9L12 3z" /></svg>
+          <span>Best</span>
+        </a>
+        <a href="#projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5zM14 14h5v5h-5z" /></svg>
+          <span>Repos</span>
+        </a>
+        <a href="#skills">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 8v8M12 8v8M16 8v8" /></svg>
+          <span>Skills</span>
+        </a>
+        <a href="#contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
