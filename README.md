@@ -1,6 +1,6 @@
-# NovaKit
+# KEYSTROKE
 
-Static product landing page for `NovaKit`, a fictional client workspace SaaS concept.
+Static single-page e-commerce concept for a mechanical keyboard switches brand.
 
 ## Run locally
 

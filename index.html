@@ -5,277 +5,330 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="NovaKit is a premium client workspace product concept for briefs, portals, invoices, and project updates."
+      content="KEYSTROKE is a dark e-commerce concept for premium mechanical keyboard switches."
     />
-    <title>NovaKit - Client Workspace</title>
+    <title>KEYSTROKE - Feel Every Press</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="./assets/hero-structure.png" as="image" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="site-shell">
-      <header class="topbar" data-topbar>
-        <a class="brand" href="#home" aria-label="NovaKit home">NovaKit</a>
-        <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="#home">Home</a>
-          <a href="#featured">Suite</a>
-          <a href="#projects">Modules</a>
-          <a href="#skills">Flow</a>
-          <a href="#contact">Access</a>
+    <header class="navbar" data-navbar>
+      <div class="nav-inner container">
+        <a class="logo" href="#home" aria-label="KEYSTROKE home">KEY<span>.</span>STROKE</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#switches">Switches</a>
+          <a href="#builds">Builds</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
         </nav>
         <div class="nav-actions">
-          <a class="ghost-pill" href="#projects">Modules</a>
-          <a class="dark-pill" href="#contact" aria-label="Open contact section">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-            Request access
-          </a>
+          <button class="cart-btn" type="button" data-cart-open>Cart (<span data-cart-count>0</span>)</button>
+          <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-      </header>
-
-      <main id="home">
-        <section class="hero section-panel" aria-labelledby="hero-title">
-          <img class="hero-bg" src="./assets/hero-structure.png" alt="" />
-          <div class="hero-copy">
-            <p class="eyebrow">Client portals - briefs - invoices</p>
-            <h1 id="hero-title">
-              <span>RUN</span>
-              <span class="muted">YOUR</span>
-              <span>STUDIO</span>
-            </h1>
-          </div>
-          <a class="scroll-cue" href="#featured">
-            <span>Scroll</span>
-            <i aria-hidden="true"></i>
-          </a>
-        </section>
-
-        <section id="featured" class="featured-wrap" aria-labelledby="featured-title">
-          <article class="feature-card hero-product">
-            <div class="ribbon">Core workspace</div>
-            <div class="project-visual visual-core" aria-hidden="true">
-              <div class="browser-line">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="product-preview">
-                <div class="preview-top">
-                  <span>Client Portal</span>
-                  <strong>82%</strong>
-                </div>
-                <div class="timeline-lane">
-                  <i></i>
-                  <i></i>
-                  <i class="active"></i>
-                  <i></i>
-                </div>
-                <div class="portal-grid">
-                  <div></div>
-                  <div></div>
-                  <div class="active"></div>
-                  <div></div>
-                </div>
-              </div>
-              <button class="play-orbit" aria-label="Preview NovaKit">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m9 7 8 5-8 5V7z" />
-                </svg>
-              </button>
-            </div>
-            <div class="feature-content">
-              <div class="meta-row">
-                <span>Studio OS</span>
-                <span>Beta concept</span>
-              </div>
-              <h2 id="featured-title">NovaKit Core</h2>
-              <p>
-                A polished command center for freelancers and small studios: collect briefs, share
-                deliverables, track approvals, and keep every client thread out of messy chat history.
-              </p>
-              <ul class="dash-list">
-                <li>private client portals</li>
-                <li>structured onboarding briefs</li>
-                <li>invoice and milestone tracker</li>
-                <li>weekly project pulse updates</li>
-              </ul>
-              <div class="tag-row">
-                <span>SaaS</span>
-                <span>Workflow</span>
-                <span>Client ops</span>
-              </div>
-              <div class="price-row">
-                <strong>$29</strong>
-                <span class="price-note">per seat / mo</span>
-                <a class="dark-pill" href="#contact">Join beta</a>
-                <a class="ghost-pill" href="#projects">View modules</a>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section id="projects" class="recent-drops" aria-labelledby="projects-title">
-          <div class="section-heading">
-            <p class="eyebrow">Product modules</p>
-            <h2 id="projects-title">Workflow Drops</h2>
-          </div>
-          <div class="project-grid">
-            <article class="mini-card" data-kind="css">
-              <div class="mini-visual visual-portal"></div>
-              <div class="mini-body">
-                <span class="mini-kicker">Portal</span>
-                <h3>Client Room</h3>
-                <p>A clean shared space for contracts, links, files, approvals, and next steps.</p>
-                <div class="mini-footer">
-                  <a href="#contact">Learn more</a>
-                  <span>Private</span>
-                </div>
-              </div>
-            </article>
-            <article class="mini-card" data-kind="js">
-              <div class="mini-visual visual-shop"></div>
-              <div class="mini-body">
-                <span class="mini-kicker">Intake</span>
-                <h3>Smart Briefs</h3>
-                <p>Guided questionnaires that turn vague requests into scoped, useful project inputs.</p>
-                <div class="mini-footer">
-                  <a href="#contact">Learn more</a>
-                  <span>Forms</span>
-                </div>
-              </div>
-            </article>
-            <article class="mini-card" data-kind="html">
-              <div class="mini-visual visual-html"></div>
-              <div class="mini-body">
-                <span class="mini-kicker">Money</span>
-                <h3>Invoice Flow</h3>
-                <p>Simple retainers, milestones, payment states, and friendly reminders in one view.</p>
-                <div class="mini-footer">
-                  <a href="#contact">Learn more</a>
-                  <span>Billing</span>
-                </div>
-              </div>
-            </article>
-            <article class="mini-card" data-kind="presentation">
-              <div class="mini-visual visual-deck"></div>
-              <div class="mini-body">
-                <span class="mini-kicker">Updates</span>
-                <h3>Pulse Reports</h3>
-                <p>Auto-formatted weekly summaries that make progress obvious without extra meetings.</p>
-                <div class="mini-footer">
-                  <a href="#contact">Learn more</a>
-                  <span>Status</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="skills" class="about-band" aria-labelledby="skills-title">
-          <div class="idea-copy">
-            <p class="eyebrow line">The idea</p>
-            <h2 id="skills-title">Made for <em>client work.</em></h2>
-            <p>
-              NovaKit is a fictional SaaS case study built around a real problem: small studios lose
-              hours translating scattered client messages into decisions, files, invoices, and updates.
-            </p>
-            <div class="stats-row" aria-label="Product stats">
-              <div>
-                <strong>4</strong>
-                <span>core modules</span>
-              </div>
-              <div>
-                <strong>12m</strong>
-                <span>setup target</span>
-              </div>
-              <div>
-                <strong>0</strong>
-                <span>messy threads</span>
-              </div>
-            </div>
-          </div>
-          <div class="skills-board" aria-label="Workflow steps">
-            <div class="skill-panel">
-              <span>01</span>
-              <h3>Brief</h3>
-              <p>Turn the first client conversation into structured scope, references, and constraints.</p>
-            </div>
-            <div class="skill-panel">
-              <span>02</span>
-              <h3>Build</h3>
-              <p>Share progress, files, links, notes, and decisions from one calm project room.</p>
-            </div>
-            <div class="skill-panel">
-              <span>03</span>
-              <h3>Close</h3>
-              <p>Package deliverables, approvals, invoices, and follow-up work without losing context.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="faq" aria-labelledby="faq-title">
-          <h2 id="faq-title">FAQ</h2>
-          <div class="faq-list">
-            <details open>
-              <summary>Is NovaKit a real product?</summary>
-              <p>It is a polished product concept and landing page prototype for a fictional SaaS tool.</p>
-            </details>
-            <details>
-              <summary>Who is it for?</summary>
-              <p>Freelancers, designers, developers, marketers, and small agencies that handle client work.</p>
-            </details>
-            <details>
-              <summary>What does this concept demonstrate?</summary>
-              <p>Product thinking, visual direction, responsive layout, interaction details, and SaaS-style storytelling.</p>
-            </details>
-          </div>
-        </section>
-
-        <section id="contact" class="contact-strip" aria-labelledby="contact-title">
-          <div>
-            <p class="eyebrow">Available now</p>
-            <h2 id="contact-title">Reserve early access for your studio.</h2>
-          </div>
-          <div class="contact-actions">
-            <a class="dark-pill" href="mailto:hello@novakit.studio">Join beta</a>
-            <button class="ghost-pill" type="button" data-copy="https://build-os-portfolio.vercel.app">Copy link</button>
-          </div>
-        </section>
-      </main>
-
-      <aside class="availability-toast" data-toast>
-        <button type="button" aria-label="Close availability card" data-close-toast>x</button>
-        <span class="percent">%</span>
-        <div>
-          <small>Early access</small>
-          <strong>WAITLIST</strong>
-        </div>
-      </aside>
-
-      <nav class="mobile-dock" aria-label="Mobile navigation">
-        <a href="#home" class="active">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20H6v-7h12" /></svg>
-          <span>Home</span>
-        </a>
-        <a href="#featured">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.9-5.4 2.9 1-6-4.3-4.2 6-.9L12 3z" /></svg>
-          <span>Suite</span>
-        </a>
-        <a href="#projects">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5zM14 14h5v5h-5z" /></svg>
-          <span>Modules</span>
-        </a>
-        <a href="#skills">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 8v8M12 8v8M16 8v8" /></svg>
-          <span>Flow</span>
-        </a>
-        <a href="#contact">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg>
-          <span>Contact</span>
-        </a>
+      </div>
+      <nav class="mobile-menu" aria-label="Mobile navigation" data-mobile-menu>
+        <a href="#switches">Switches</a>
+        <a href="#builds">Builds</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
       </nav>
-    </div>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <p class="hero-eyebrow">NEW DROP - SPRING 2025</p>
+        <h1 id="hero-title">
+          <span>FEEL EVERY</span>
+          <span>PRESS.</span>
+        </h1>
+        <p class="hero-subtext">Linear. Tactile. Clicky. Your build, your sound.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#switches">Shop Switches</a>
+          <a class="btn btn-secondary" href="#builds">View Builds</a>
+        </div>
+        <a class="scroll-indicator" href="#featured" aria-label="Scroll to featured switch">
+          <span>Scroll</span>
+          <b aria-hidden="true">&darr;</b>
+        </a>
+      </section>
+
+      <section id="featured" class="featured-section">
+        <div class="container">
+          <p class="section-label reveal" style="--i: 0">- FEATURED DROP</p>
+          <div class="featured-grid">
+            <article class="featured-image reveal" style="--i: 1">
+              <span class="product-badge">NEW</span>
+              <div class="switch-art" aria-hidden="true">
+                <svg viewBox="0 0 180 180">
+                  <rect x="42" y="24" width="96" height="56" rx="10" />
+                  <rect x="58" y="76" width="64" height="58" rx="8" />
+                  <path d="M66 134h48M78 134v26M102 134v26" />
+                  <circle cx="90" cy="105" r="12" />
+                </svg>
+              </div>
+            </article>
+            <article class="featured-copy reveal" style="--i: 2">
+              <h2>Gateron Oil King V2</h2>
+              <p class="product-desc">Pre-lubed linear. Buttery smooth. 45g actuation.</p>
+              <dl class="spec-list">
+                <div><dt>Type</dt><dd>Linear</dd></div>
+                <div><dt>Actuation</dt><dd>45g</dd></div>
+                <div><dt>Bottom Out</dt><dd>65g</dd></div>
+                <div><dt>Travel</dt><dd>4.0mm</dd></div>
+                <div><dt>Stem</dt><dd>POM</dd></div>
+                <div><dt>Housing</dt><dd>Nylon</dd></div>
+                <div><dt>Lifespan</dt><dd>100M keystrokes</dd></div>
+              </dl>
+              <div class="price-block">
+                <strong>$0.65 / switch</strong>
+                <span>or $58.00 / 90-pack</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn btn-primary" type="button" data-add-cart data-name="Gateron Oil King V2" data-variant="90-pack" data-price="58.00">Add to Cart</button>
+                <a class="btn btn-secondary" href="#switches">View Details</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="switches" class="drops-section">
+        <div class="container">
+          <div class="section-heading reveal" style="--i: 0">
+            <h2>Recent Drops</h2>
+            <a href="#featured">View All &rarr;</a>
+          </div>
+          <div class="product-grid">
+            <article class="product-card reveal" style="--i: 1">
+              <div class="product-visual" aria-hidden="true"><span></span></div>
+              <div class="product-info">
+                <div class="tags"><span>Tactile</span><span>45g</span></div>
+                <h3>Akko CS Jelly Purple</h3>
+                <p>$0.45/switch</p>
+                <button type="button" data-add-cart data-name="Akko CS Jelly Purple" data-variant="70-pack" data-price="31.50">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card reveal" style="--i: 2">
+              <div class="product-visual product-visual-muted" aria-hidden="true"><span></span></div>
+              <div class="product-info">
+                <div class="tags"><span>Silent</span><span>Tactile</span><span>52g</span></div>
+                <h3>Boba U4 Silent</h3>
+                <p>$0.75/switch</p>
+                <button type="button" data-add-cart data-name="Boba U4 Silent" data-variant="70-pack" data-price="52.50">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card reveal" style="--i: 3">
+              <div class="product-visual product-visual-warm" aria-hidden="true"><span></span></div>
+              <div class="product-info">
+                <div class="tags"><span>Tactile</span><span>67g</span></div>
+                <h3>Holy Panda X</h3>
+                <p>$1.20/switch</p>
+                <button type="button" data-add-cart data-name="Holy Panda X" data-variant="70-pack" data-price="84.00">Add to Cart</button>
+              </div>
+            </article>
+            <article class="product-card reveal" style="--i: 4">
+              <div class="product-visual product-visual-yellow" aria-hidden="true"><span></span></div>
+              <div class="product-info">
+                <div class="tags"><span>Linear</span><span>35g</span></div>
+                <h3>Gateron Yellow Pro</h3>
+                <p>$0.38/switch</p>
+                <button type="button" data-add-cart data-name="Gateron Yellow Pro" data-variant="90-pack" data-price="34.20">Add to Cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="builds" class="marquee-section">
+        <p class="marquee-label reveal" style="--i: 0">INSTALLED IN THESE BUILDS</p>
+        <div class="marquee-window reveal" style="--i: 1">
+          <div class="marquee-track">
+            <div class="build-set" aria-hidden="false">
+              <span class="build-card"><i style="--swatch:#3b82f6"></i>Tofu65 - Gateron Oil King</span>
+              <span class="build-card"><i style="--swatch:#050505"></i>Iron165 - Boba U4</span>
+              <span class="build-card"><i style="--swatch:#34d399"></i>Zoom75 - Holy Panda X</span>
+              <span class="build-card"><i style="--swatch:#facc15"></i>QK65 - Akko Jelly Purple</span>
+              <span class="build-card"><i style="--swatch:#92400e"></i>kbd67lite - Gateron Yellow</span>
+              <span class="build-card"><i style="--swatch:#ef4444"></i>Satisfaction75 - Topre Converted</span>
+              <span class="build-card"><i style="--swatch:#f8fafc"></i>Mode Eighty - C3 Tangerine</span>
+              <span class="build-card"><i style="--swatch:#a855f7"></i>Freebird TKL - Durock L7</span>
+            </div>
+            <div class="build-set" aria-hidden="true">
+              <span class="build-card"><i style="--swatch:#3b82f6"></i>Tofu65 - Gateron Oil King</span>
+              <span class="build-card"><i style="--swatch:#050505"></i>Iron165 - Boba U4</span>
+              <span class="build-card"><i style="--swatch:#34d399"></i>Zoom75 - Holy Panda X</span>
+              <span class="build-card"><i style="--swatch:#facc15"></i>QK65 - Akko Jelly Purple</span>
+              <span class="build-card"><i style="--swatch:#92400e"></i>kbd67lite - Gateron Yellow</span>
+              <span class="build-card"><i style="--swatch:#ef4444"></i>Satisfaction75 - Topre Converted</span>
+              <span class="build-card"><i style="--swatch:#f8fafc"></i>Mode Eighty - C3 Tangerine</span>
+              <span class="build-card"><i style="--swatch:#a855f7"></i>Freebird TKL - Durock L7</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="builders-section">
+        <div class="container builders-grid">
+          <div class="builders-copy">
+            <p class="eyebrow reveal" style="--i: 0">WHO WE BUILD FOR</p>
+            <h2 class="reveal" style="--i: 1">Built for the ones who actually give a damn.</h2>
+            <p class="reveal" style="--i: 2">
+              Every switch in our catalog is tested, tuned, and chosen by builders - not marketing
+              teams. We stock what the community actually uses.
+            </p>
+            <p class="reveal" style="--i: 3">
+              From beginner 65% builds to endgame custom boards - if you're putting in the work,
+              we've got the switches.
+            </p>
+            <div class="stats-row reveal" style="--i: 4">
+              <div><strong data-counter data-target="240" data-suffix="K+">0</strong><span>Switches Sold</span></div>
+              <div><strong data-counter data-target="18" data-suffix="K+">0</strong><span>Builders</span></div>
+              <div><strong data-counter data-target="4.9" data-suffix="/5">0</strong><span>Avg. Rating</span></div>
+            </div>
+          </div>
+          <div class="build-placeholder reveal" style="--i: 5" aria-hidden="true">
+            <span>YOUR BUILD</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <h2 class="reveal" style="--i: 0">Frequently Asked</h2>
+          <div class="faq-list reveal" style="--i: 1">
+            <article class="faq-item open">
+              <button type="button">
+                <span>What's the difference between Linear, Tactile, and Clicky?</span>
+                <i>+</i>
+              </button>
+              <div class="faq-answer">
+                <p>Linear switches have a smooth keystroke with no bump or click. Tactile switches have a noticeable bump mid-press. Clicky switches add an audible click to the bump. Most builders start with linear for gaming and tactile for typing.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button type="button">
+                <span>Do I need to lube my switches?</span>
+                <i>+</i>
+              </button>
+              <div class="faq-answer">
+                <p>Pre-lubed switches like the Gateron Oil King come ready to use. For unlubed switches, hand-lubing with Krytox 205g0 or 3203 significantly improves the sound and feel.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button type="button">
+                <span>How many switches do I need for my board?</span>
+                <i>+</i>
+              </button>
+              <div class="faq-answer">
+                <p>65% boards need around 68, TKL around 87, full-size around 104. Always order 10-15 extra for mistakes or spares.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button type="button">
+                <span>What's the return policy?</span>
+                <i>+</i>
+              </button>
+              <div class="faq-answer">
+                <p>Unopened switches can be returned within 30 days. Opened or lubed switches are final sale because we cannot resell them once they have been handled.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button type="button">
+                <span>Do you ship internationally?</span>
+                <i>+</i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. We ship to 40+ countries. EU orders may be subject to local import duties. Shipping times vary by region.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button type="button">
+                <span>What's a spring swap and should I do it?</span>
+                <i>+</i>
+              </button>
+              <div class="faq-answer">
+                <p>Spring swapping replaces the factory spring with a different weight, changing actuation and bottom-out feel. It is common for tuning switches to your exact preference without buying new ones.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="logo" href="#home">KEY<span>.</span>STROKE</a>
+            <p>Feel Every Press.</p>
+            <div class="socials" aria-label="Social links">
+              <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" /><circle cx="12" cy="12" r="3" /><path d="M17 7h.01" /></svg></a>
+              <a href="#" aria-label="Twitter X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" /></svg></a>
+              <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24"><path d="M7 8c2-1 8-1 10 0l1 8c-3 2-9 2-12 0z" /><path d="M9 13h.01M15 13h.01" /></svg></a>
+            </div>
+          </div>
+          <div>
+            <h3>Switches</h3>
+            <a href="#switches">Linear</a>
+            <a href="#switches">Tactile</a>
+            <a href="#switches">Clicky</a>
+            <a href="#switches">Silent</a>
+          </div>
+          <div>
+            <h3>Support</h3>
+            <a href="#faq">FAQ</a>
+            <a href="#faq">Shipping</a>
+            <a href="#faq">Returns</a>
+            <a href="mailto:hello@keystroke.example">Contact</a>
+          </div>
+          <form class="newsletter">
+            <h3>Stay in the loop</h3>
+            <p>New drops. Build guides. No spam.</p>
+            <div>
+              <input type="email" placeholder="you@example.com" aria-label="Email address" />
+              <button type="submit" aria-label="Subscribe">&rarr;</button>
+            </div>
+          </form>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2025 KEYSTROKE. All rights reserved.</span>
+          <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="cart-overlay" data-cart-overlay></div>
+    <aside class="cart-sidebar" aria-label="Shopping cart" data-cart-sidebar>
+      <header>
+        <h2>Your Cart</h2>
+        <button type="button" aria-label="Close cart" data-cart-close>x</button>
+      </header>
+      <div class="cart-items" data-cart-items>
+        <p class="empty-cart">Your cart is empty.</p>
+      </div>
+      <footer>
+        <div class="total-row">
+          <span>Total</span>
+          <strong data-cart-total>$0.00</strong>
+        </div>
+        <button type="button" class="checkout-btn">Checkout</button>
+      </footer>
+    </aside>
 
     <script src="./script.js"></script>
   </body>

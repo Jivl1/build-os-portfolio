@@ -1,170 +1,192 @@
-const topbar = document.querySelector("[data-topbar]");
-const toast = document.querySelector("[data-toast]");
-const closeToast = document.querySelector("[data-close-toast]");
-const copyButton = document.querySelector("[data-copy]");
-const dockLinks = [...document.querySelectorAll(".mobile-dock a")];
-const hero = document.querySelector(".hero");
-const featureCard = document.querySelector(".feature-card");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const sections = dockLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+const navbar = document.querySelector("[data-navbar]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const mobileMenu = document.querySelector("[data-mobile-menu]");
+const cartOpen = document.querySelector("[data-cart-open]");
+const cartClose = document.querySelector("[data-cart-close]");
+const cartSidebar = document.querySelector("[data-cart-sidebar]");
+const cartOverlay = document.querySelector("[data-cart-overlay]");
+const cartItems = document.querySelector("[data-cart-items]");
+const cartCount = document.querySelector("[data-cart-count]");
+const cartTotal = document.querySelector("[data-cart-total]");
+const addCartButtons = [...document.querySelectorAll("[data-add-cart]")];
+const revealItems = [...document.querySelectorAll(".reveal")];
+const counters = [...document.querySelectorAll("[data-counter]")];
+const faqItems = [...document.querySelectorAll(".faq-item")];
+let cart = [];
 
-if (!reduceMotion) {
-  document.body.classList.add("has-motion");
-}
-
-const updateTopbar = () => {
-  topbar.classList.toggle("is-scrolled", window.scrollY > 24);
+const setNavbarState = () => {
+  navbar.classList.toggle("scrolled", window.scrollY > 10);
 };
 
-const updateDock = () => {
-  const current = sections.reduce((active, section) => {
-    const box = section.getBoundingClientRect();
-    return box.top < window.innerHeight * 0.42 ? section : active;
-  }, sections[0]);
-
-  dockLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${current.id}`);
-  });
+const closeMenu = () => {
+  mobileMenu.classList.remove("open");
+  menuToggle.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
 };
 
-const updateHeroParallax = () => {
-  if (reduceMotion || !hero) return;
-  const heroBox = hero.getBoundingClientRect();
-  const progress = Math.min(1, Math.max(0, -heroBox.top / Math.max(1, heroBox.height)));
-  document.body.style.setProperty("--hero-scroll-y", `${progress * -72}px`);
-};
-
-window.addEventListener("scroll", () => {
-  updateTopbar();
-  updateDock();
-  updateHeroParallax();
+menuToggle.addEventListener("click", () => {
+  const isOpen = mobileMenu.classList.toggle("open");
+  menuToggle.classList.toggle("open", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
-if (!reduceMotion) {
-  window.addEventListener("pointermove", (event) => {
-    const x = (event.clientX / window.innerWidth - 0.5) * 18;
-    const y = (event.clientY / window.innerHeight - 0.5) * 12;
-    document.body.style.setProperty("--hero-mouse-x", `${x}px`);
-    document.body.style.setProperty("--hero-mouse-y", `${y}px`);
-  });
-}
-
-if (!reduceMotion && featureCard) {
-  featureCard.addEventListener("pointermove", (event) => {
-    const box = featureCard.getBoundingClientRect();
-    const x = (event.clientX - box.left) / box.width - 0.5;
-    const y = (event.clientY - box.top) / box.height - 0.5;
-    featureCard.classList.add("tilt-active");
-    featureCard.style.setProperty("--card-ry", `${x * 5.5}deg`);
-    featureCard.style.setProperty("--card-rx", `${y * -4.5}deg`);
-  });
-
-  featureCard.addEventListener("pointerleave", () => {
-    featureCard.classList.remove("tilt-active");
-    featureCard.style.setProperty("--card-rx", "0deg");
-    featureCard.style.setProperty("--card-ry", "0deg");
-  });
-}
-
-closeToast?.addEventListener("click", () => {
-  toast.hidden = true;
+mobileMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
 });
 
-copyButton?.addEventListener("click", async () => {
-  const value = copyButton.dataset.copy;
-  try {
-    await navigator.clipboard.writeText(value);
-    copyButton.textContent = "Copied";
-    setTimeout(() => {
-      copyButton.textContent = "Copy link";
-    }, 1300);
-  } catch {
-    window.location.href = value;
-  }
-});
+window.addEventListener("scroll", setNavbarState);
 
-document.querySelectorAll("details").forEach((item) => {
-  item.addEventListener("toggle", () => {
-    if (!item.open) return;
-    document.querySelectorAll("details").forEach((other) => {
-      if (other !== item) other.open = false;
-    });
-  });
-});
-
-const revealTargets = [
-  ".feature-card",
-  ".section-heading",
-  ".mini-card",
-  ".idea-copy",
-  ".skill-panel",
-  ".faq",
-  ".contact-strip",
-]
-  .flatMap((selector) => [...document.querySelectorAll(selector)])
-  .filter(Boolean);
-
-if (!reduceMotion && "IntersectionObserver" in window) {
-  revealTargets.forEach((target, index) => {
-    target.classList.add("reveal-target");
-    target.style.setProperty("--stagger", index % 4);
-  });
-
+if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
+        entry.target.classList.add("visible");
         revealObserver.unobserve(entry.target);
       });
     },
-    { rootMargin: "0px 0px -12% 0px", threshold: 0.14 }
+    { threshold: 0.15 }
   );
 
-  revealTargets.forEach((target) => revealObserver.observe(target));
+  revealItems.forEach((item) => revealObserver.observe(item));
 } else {
-  revealTargets.forEach((target) => target.classList.add("is-visible"));
+  revealItems.forEach((item) => item.classList.add("visible"));
 }
 
-const statValues = [...document.querySelectorAll(".stats-row strong")];
-
-const animateStat = (element) => {
-  const raw = element.textContent.trim();
-  const match = raw.match(/^(\d+)(.*)$/);
-  if (!match || element.dataset.counted) return;
-  element.dataset.counted = "true";
-  const target = Number(match[1]);
-  const suffix = match[2];
-  const started = performance.now();
-  const duration = 900;
-
-  const tick = (now) => {
-    const progress = Math.min(1, (now - started) / duration);
+const animateCounter = (el, target, duration, suffix) => {
+  let start = 0;
+  const decimals = String(target).includes(".") ? 1 : 0;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
-    element.textContent = `${Math.round(target * eased)}${suffix}`;
-    if (progress < 1) requestAnimationFrame(tick);
+    const value = target * eased;
+    if (progress >= 1) {
+      el.textContent = `${decimals ? target.toFixed(decimals) : target}${suffix}`;
+      return;
+    }
+    el.textContent = `${decimals ? value.toFixed(decimals) : Math.floor(value)}${suffix}`;
+    requestAnimationFrame(step);
   };
-
-  requestAnimationFrame(tick);
+  requestAnimationFrame(step);
 };
 
-if (!reduceMotion && "IntersectionObserver" in window) {
-  const statObserver = new IntersectionObserver(
+if ("IntersectionObserver" in window) {
+  const counterObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        animateStat(entry.target);
-        statObserver.unobserve(entry.target);
+        if (!entry.isIntersecting || entry.target.dataset.done) return;
+        entry.target.dataset.done = "true";
+        animateCounter(
+          entry.target,
+          Number(entry.target.dataset.target),
+          1500,
+          entry.target.dataset.suffix || ""
+        );
+        counterObserver.unobserve(entry.target);
       });
     },
-    { threshold: 0.8 }
+    { threshold: 0.6 }
   );
 
-  statValues.forEach((item) => statObserver.observe(item));
+  counters.forEach((counter) => counterObserver.observe(counter));
 }
 
-updateTopbar();
-updateDock();
-updateHeroParallax();
+faqItems.forEach((item) => {
+  const button = item.querySelector("button");
+  button.addEventListener("click", () => {
+    const shouldOpen = !item.classList.contains("open");
+    faqItems.forEach((other) => other.classList.remove("open"));
+    item.classList.toggle("open", shouldOpen);
+  });
+});
+
+const openCart = () => {
+  closeMenu();
+  cartSidebar.classList.add("open");
+  cartOverlay.classList.add("open");
+};
+
+const closeCart = () => {
+  cartSidebar.classList.remove("open");
+  cartOverlay.classList.remove("open");
+};
+
+const money = (value) => `$${value.toFixed(2)}`;
+
+const renderCart = () => {
+  const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  cartCount.textContent = itemCount;
+  cartTotal.textContent = money(total);
+
+  if (!cart.length) {
+    cartItems.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+    return;
+  }
+
+  cartItems.innerHTML = cart
+    .map(
+      (item) => `
+        <article class="cart-item">
+          <div class="cart-thumb"></div>
+          <div>
+            <h3>${item.name}</h3>
+            <p>${item.variant}</p>
+            <div class="qty-controls">
+              <button type="button" data-qty="minus" data-id="${item.id}">-</button>
+              <span>${item.qty}</span>
+              <button type="button" data-qty="plus" data-id="${item.id}">+</button>
+            </div>
+          </div>
+          <span class="cart-price">${money(item.price * item.qty)}</span>
+        </article>
+      `
+    )
+    .join("");
+};
+
+addCartButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const id = `${button.dataset.name}-${button.dataset.variant}`;
+    const existing = cart.find((item) => item.id === id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({
+        id,
+        name: button.dataset.name,
+        variant: button.dataset.variant,
+        price: Number(button.dataset.price),
+        qty: 1,
+      });
+    }
+    renderCart();
+    openCart();
+  });
+});
+
+cartItems.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-qty]");
+  if (!button) return;
+
+  const item = cart.find((entry) => entry.id === button.dataset.id);
+  if (!item) return;
+
+  if (button.dataset.qty === "plus") item.qty += 1;
+  if (button.dataset.qty === "minus") item.qty -= 1;
+  cart = cart.filter((entry) => entry.qty > 0);
+  renderCart();
+});
+
+cartOpen.addEventListener("click", openCart);
+cartClose.addEventListener("click", closeCart);
+cartOverlay.addEventListener("click", closeCart);
+
+document.querySelector(".newsletter").addEventListener("submit", (event) => {
+  event.preventDefault();
+  event.currentTarget.reset();
+});
+
+setNavbarState();
+renderCart();
