@@ -1,6 +1,6 @@
-# Build OS Portfolio
+# NovaKit
 
-Static portfolio site inspired by premium product pages, rebuilt as an original developer portfolio for `Jivl1`.
+Static product landing page for `NovaKit`, a fictional client workspace SaaS concept.
 
 ## Run locally
 
